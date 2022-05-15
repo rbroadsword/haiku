@@ -1,4 +1,4 @@
-import Haiku from '../src/js/function.js'; 
+import Haiku from '../src/js/haiku.js'; 
 
 describe('Haiku', () => {
 

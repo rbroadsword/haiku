@@ -5,5 +5,7 @@ export default class Haiku {
     this.line2 = line2;
     this.line3 = line3;
   }
+
+  
 }
 
