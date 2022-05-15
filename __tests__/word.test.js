@@ -20,6 +20,21 @@ describe("Word", () => {
 
   test("should check that silent e in the end of the word", () => {
     const myWord = new Word("blue", 0, 0);
-    expect(myWord.checkVowelSyllable()).toBeTruthy();
+    expect(myWord.endsWithE()).toBeTruthy();
+  });
+
+  test("should check that silent e in the end of the word", () => {
+    const myWord = new Word("green", 0, 0);
+    expect(myWord.endsWithE()).toBeFalsy();
+  });
+
+  test("should check if there are two vowels next to each other and return true", () => {
+    const myWord = new Word("about", 0, 0); 
+    expect(myWord.diphthong()).toBeTruthy(); 
+  }); 
+
+  test("should check if there are two vowels next to each other and return false", () => {
+    const myWord = new Word("make", 0, 0); 
+    expect(myWord.diphthong()).toBeFalsy(); 
   });
 });
