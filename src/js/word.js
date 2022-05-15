@@ -29,27 +29,21 @@ export default class Word {
       return false;
     }
   }
+
   diphthong() {
     const wordArray = this.word.split(""); 
     const myWord = this.word; 
     console.log(typeof myWord); 
     const vowels = ["a", "i", "e", "o", "u", "y"];
     const diphthongs = ["oi", "oy", "ou", "oo", "au", "ay", "ai", "ea", "ie", "ee" ]; 
+    let containsDip = false; 
 
-    diphthongs.forEach(function(){
-      if (myWord.includes(diphthongs)){
-        return true; 
-      }else {
-        return false; 
+    diphthongs.forEach(function(dip){
+      console.log(dip);                 //values are diphthong indexs
+      if (myWord.includes(dip)){
+        containsDip = true; 
       }
     })
-  
-  // for (let i = 0; i < diphthongs.length -1; i++){
-  //   if (myWord.includes(diphthongs[i])) {
-  //     return true; 
-  //   } else {
-  //     return false; 
-  //   }
-  // }
+    return containsDip; 
   }
 }
