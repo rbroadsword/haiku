@@ -10,7 +10,8 @@ describe("Word", () => {
 
   test("should correctly determine if there is a vowel in a word", () => {
     const myWord = new Word("egg", 0, 0);
-    expect(myWord.checkVowelSyllable()).toBeTruthy();
+    myWord.checkVowelSyllable();  
+    expect(myWord.vowelCount()).toEqual(1);
   });
 
   test("should correctly determine if there is a vowel in a word", () => {
@@ -20,6 +21,11 @@ describe("Word", () => {
 
   test("should check that silent e in the end of the word", () => {
     const myWord = new Word("blue", 0, 0);
+    expect(myWord.endsWithE()).toBeTruthy();
+  });
+
+  test("should check that silent e in the end of the word", () => {
+    const myWord = new Word("able", 0, 0);
     expect(myWord.endsWithE()).toBeTruthy();
   });
 
@@ -36,5 +42,10 @@ describe("Word", () => {
   test("should check if there are two vowels next to each other and return false", () => {
     const myWord = new Word("make", 0, 0); 
     expect(myWord.diphthong()).toBeFalsy(); 
+  });
+
+  test('should divide the syllable between two same consonants', () => {
+    const myWord = new Word('rabbit', 0, 0);
+    expect(myWord.doubleConsonants()).toBeTruthy();
   });
 });
