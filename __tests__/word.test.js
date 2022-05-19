@@ -10,13 +10,14 @@ describe("Word", () => {
 
   test("should correctly determine if there is a vowel in a word", () => {
     const myWord = new Word("egg", 0, 0);
-    myWord.checkVowelSyllable();  
-    expect(myWord.vowelCount()).toEqual(1);
+    myWord.checkVowel();
+    expect(myWord.vowelCount).toEqual(1);
   });
 
   test("should correctly determine if there is a vowel in a word", () => {
-    const myWord = new Word("gg", 0, 0);
-    expect(myWord.checkVowelSyllable()).toBeFalsy();
+    const myWord = new Word("gg", 0, 0); 
+    myWord.checkVowel();
+    expect(myWord.vowelCount).toEqual(0);
   });
 
   test("should check that silent e in the end of the word", () => {

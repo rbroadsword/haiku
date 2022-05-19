@@ -5,21 +5,15 @@ export default class Word {
     this.vowelCount = 0;
   }
 
-  checkVowelSyllable(word) {
-    const wordArray = this.word.split("");
-    let counter = 0; 
-    if (
-      wordArray.includes("a") ||
-      wordArray.includes("e") ||
-      wordArray.includes("o") ||
-      wordArray.includes("i") ||
-      wordArray.includes("u") ||
-      wordArray.includes("y")
-    ) {
-      this.vowelCount ++; 
-      // counter ++; 
-      // return counter;  
-    }  
+  checkVowel() {
+    const vowels = ['a', 'e', 'o', 'i', 'u', 'y']; 
+    const checkWord = this.word; 
+    let count = 0; 
+    vowels.forEach(vowel => {
+      if (checkWord.includes(vowel)) {
+      this.vowelCount ++;  
+      }
+   })  
   }
 
   endsWithE(word) {
